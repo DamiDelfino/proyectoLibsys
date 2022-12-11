@@ -1,0 +1,139 @@
+<html class="" lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=yes" />
+    <meta name="description"
+        content="Biblioteca Digital del Ministerio de Justicia de la Nación. Digitalizamos libros históricos y editamos obras jurídicas de relevancia en formatos accesibles" />
+
+    <title>Libsys</title>
+
+    <link rel="alternate" type="application/rss+xml" title="Canal de RSS Omeka" href="/items/browse?output=rss2" />
+    <link rel="alternate" type="application/atom+xml" title="Canal de Atom Omeka" href="/items/browse?output=atom" />
+    <!-- Stylesheets -->
+    <link href="http://www.bibliotecadigital.gob.ar/plugins/ShortcodeCarousel/views/public/css/jcarousel.responsive.css"
+        media="all" rel="stylesheet" type="text/css">
+    <link href="http://www.bibliotecadigital.gob.ar/plugins/Reference/views/public/css/reference.css" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://www.bibliotecadigital.gob.ar/application/views/scripts/css/iconfonts.css" media="all"
+        rel="stylesheet" type="text/css">
+    <link href="http://www.bibliotecadigital.gob.ar/themes/avantgarde/css/style.css" media="all" rel="stylesheet"
+        type="text/css"> <!-- JavaScripts -->
+        {% load static %}
+        <link rel="shortcut icon" href="{% static 'img/icono.jpg' %}" />
+
+</head>
+
+<body id="home" class="two-col">
+    <header>
+        <div class="container">
+            <div id="site-title" style="width: 28%; margin-top: 0px;">
+                {% load static %}
+                <a href="/">
+                    <img src="{% static 'img/libsys.jpeg' %}" style="width: 66%;filter: brightness(1.1);mix-blend-mode: multiply;" alt="Logo de Libsys">
+                
+            </div>
+
+            <!--SE PREGUNTA SI ESTA EN EL INDEX Y SE MUESTRA O NO LA BUSQUEDA DEL MENU -->
+
+            <div id="primary-nav" style="position: absolute;right: 8%;">
+                <ul class="navigation">
+                    <li>
+                        <a href="/home">HOME</a>
+                    </li>
+                    <li>
+                        <a href="/libros">LIBROS</a>
+                    </li>
+                    <li>
+                        <a href="/alquilar-libro">ALQUILAR LIBROS</a>
+                    </li>
+                    <li>
+                        <a href="/registro">REGISTRARSE</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-nav">
+        <ul class="navigation">
+            <li>
+                <a href="/home">HOME</a>
+            </li>
+            <li>
+                <a href="/libros">LIBROS</a>
+            </li>
+            <li>
+                <a href="/alquilar-libro">ALQUILAR LIBROS</a>
+            </li>
+            <li>
+                <a href="/registro">REGISTRARSE</a>
+            </li>
+        </ul>
+    </div>
+
+    <div id="header-image-holder">
+    </div>
+
+
+
+    <div id="content">
+        
+        <div id="fullWidth" class="marginbottom">
+            <div style = "height: 25%;">
+                <div style=" position: absolute; top: 20%; left: 20%; font-size: 35px;" >
+                    <form method="POST">
+                        {% csrf_token %}
+            
+                        {{form.as_p}}
+            
+                        <div style = "padding-top: 20%;">
+                            <button type="submit" style="background-color: #28a745;color: #ffff;border-color: #28a745;padding: 0.375rem 0.75rem;border-radius: 0.25rem;overflow: visible;border: 1px solid transparent;">
+                            ENVIAR
+                            </button>
+                        </div>
+            
+                    </form>
+                </div>
+            </div>
+        </div>    
+    </div>
+
+
+
+
+    <footer class="main-footer" style="background-color: #fff;justify-content: center;display: flex;position: fixed;bottom: 0px;left: 20%;">
+        <img src="/static/img/libsys.jpeg" style="width: 10%;left: 9%;position: absolute;filter: brightness(1.1);mix-blend-mode: multiply;" alt="Logo de Libsys">
+            <div id="footer-content">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12" style="width: 100%;">
+                            <div style="justify-content: center;position: absolute;width: 100%;">
+                                <a href="https://www.linkedin.com/in/nico-pacifico/">
+                                    <p class="text-muted" style="margin: 10px 0;font-size: 12px;left: 20%;position: absolute;width: 123%;">Los contenidos de Libsys
+                                        Company están licenciados bajo REPADEL INC &amp; Asoc., Reconocimiento 2.5 Argentina License</p>
+                                </a>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <p class="credits"><a class="designed center-div" >Basado en la plantilla AvantGarde - Diseñada por Emedara Studio.</a>
+                            - <a class="powered">REPADEL - Recalde, Pacifico y Delfino.</a></p>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+    </footer>
+
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            Omeka.showAdvancedForm();
+            Omeka.dropDown();
+        });
+    </script>
+</body></html>
