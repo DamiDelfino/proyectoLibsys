@@ -67,3 +67,6 @@ def ninasRebeldes(request):
 
 def buscaLibros(request):
     return render(request, "libro/buscaLibros.html")
+
+def miCuenta(request):
+    return render(request, "usr/micuenta.html")
